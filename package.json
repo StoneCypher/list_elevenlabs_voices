@@ -1,13 +1,14 @@
 {
   "name": "list_elevenlabs_voices",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "List eleven labs voices in the console.  Output as text or json.",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf docs && mkdir docs && cd docs && mkdir docs && cd .. && rimraf dist && mkdir dist && rimraf build && mkdir build",
     "site": "cp ./src/site/* ./docs && cp ./src/site/.nojekyll ./docs",
+    "typescript": "tsc --build tsconfig.json",
     "test": "echo todo jest",
-    "build": "npm run clean && npm run site && npm run test"
+    "build": "npm run clean && npm run typescript && npm run site && npm run test"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,9 @@
   },
   "homepage": "https://github.com/StoneCypher/list_elevenlabs_voices#readme",
   "devDependencies": {
+    "@types/node": "^20.5.0",
     "commander": "^11.0.0",
-    "rimraf": "^5.0.1"
+    "rimraf": "^5.0.1",
+    "typescript": "^5.1.6"
   }
 }
