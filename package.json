@@ -1,6 +1,6 @@
 {
   "name": "list_elevenlabs_voices",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "List eleven labs voices in the console.  Output as text or json.",
   "main": "dist/index.js",
   "scripts": {
