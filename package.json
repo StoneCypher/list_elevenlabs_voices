@@ -1,0 +1,30 @@
+{
+  "name": "list_elevenlabs_voices",
+  "version": "0.1.0",
+  "description": "List eleven labs voices in the console.  Output as text or json.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StoneCypher/list_elevenlabs_voices.git"
+  },
+  "keywords": [
+    "eleven",
+    "labs",
+    "elevenlabs",
+    "eleven-labs",
+    "cli",
+    "console",
+    "list",
+    "voices",
+    "stonecypher"
+  ],
+  "author": "John Haugeland <stonecypher@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StoneCypher/list_elevenlabs_voices/issues"
+  },
+  "homepage": "https://github.com/StoneCypher/list_elevenlabs_voices#readme"
+}
