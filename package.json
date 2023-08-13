@@ -1,10 +1,13 @@
 {
   "name": "list_elevenlabs_voices",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "List eleven labs voices in the console.  Output as text or json.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest"
+    "clean": "rimraf docs && mkdir docs && cd docs && mkdir docs && cd .. && rimraf dist && mkdir dist && rimraf build && mkdir build",
+    "site": "cp ./src/site/* ./docs -r && cp ./src/site/.nojekyll ./docs",
+    "test": "echo todo jest",
+    "build": "npm run clean && npm run site && npm run test"
   },
   "repository": {
     "type": "git",
@@ -26,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/StoneCypher/list_elevenlabs_voices/issues"
   },
-  "homepage": "https://github.com/StoneCypher/list_elevenlabs_voices#readme"
+  "homepage": "https://github.com/StoneCypher/list_elevenlabs_voices#readme",
+  "devDependencies": {
+    "rimraf": "^5.0.1"
+  }
 }
