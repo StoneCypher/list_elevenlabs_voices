@@ -1,7 +1,9 @@
+[Site](https://stonecypher.github.io/list_elevenlabs_voices/) | [Repo](https://github.com/StoneCypher/list_elevenlabs_voices) | [NPM](https://www.npmjs.com/package/list_elevenlabs_voices)
+
 # list_elevenlabs_voices
 Simple console tool to list eleven labs voices.  Needs API key to see custom voices.
 
-![](./example.png)
+![](./src/site/example.png)
 
 ```
 npm install -g list_elevenlabs_voices

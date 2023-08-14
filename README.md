@@ -3,7 +3,7 @@
 # list_elevenlabs_voices
 Simple console tool to list eleven labs voices.  Needs API key to see custom voices.
 
-![](./example.png)
+![](./src/site/example.png)
 
 ```
 npm install -g list_elevenlabs_voices
