@@ -1,4 +1,3 @@
-
 // program
 
 import { readFileSync, writeFileSync }      from 'fs';
@@ -20,7 +19,8 @@ program
   .option('-k, --api-key <key>',       'specify an api key to get private voices')
   .option('-e, --key-envvar <e>',      'specify an envvar name to get an api key from')
   .option('-s, --silent',              'no output at all (todo)')
-  .option('-c, --color',               'colorize output (not for json)')
+  .option('-c, --color',               'colorize output (default; not for json)')
+  .option('-b, --basic',               'basic output (no color, not json)')
   .option('-j, --as-json',             'report as json, instead of ascii tabled')
   .option('-f, --as-formatted-json',   'report as formatted multiline json')
   .option('-o, --output-json <fname>', 'store json to disk, irrespective of display');
@@ -28,19 +28,19 @@ program
 program.parse(process.argv);
 
 const options = program.opts(),
-      api_key = options.apiKey ?? process.env[options.keyEnvvar];
+      api_key = options.apiKey ?? process.env[options.keyEnvvar] ?? process.env['LIST_ELEVENLABS_VOICES_APIKEY'];
 
 if (typeof api_key !== 'string') { throw new TypeError('No valid API key or envvar'); }
 
-if (options.color !== undefined) { is_color(options.color) };
+if (options.basic !== undefined) { is_color(false) };
 
 
 
 
 
 // needs an api key or a key envvar, can't skip
-if ((options.apiKey === undefined) && (options.keyEnvvar === undefined)) {
-  throw new SyntaxError(base( `Specify either an ${item('API key')} or a ${item('Key Envvar')}`));
+if (api_key === undefined) {
+  throw new SyntaxError(base( `Specify either an ${item('API key')} or a ${item('Key Envvar')}, or set envvar ${item('LIST_ELEVENLABS_VOICES_APIKEY')}`));
 }
 
 // can't have both

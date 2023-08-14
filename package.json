@@ -1,14 +1,15 @@
 {
   "name": "list_elevenlabs_voices",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "List eleven labs voices in the console.  Output as text or json.",
+  "bin": "dist/shebang.js",
   "main": "dist/index.js",
   "scripts": {
     "clean": "rimraf docs && mkdir docs && cd docs && mkdir docs && cd .. && rimraf dist && mkdir dist && rimraf build && mkdir build",
-    "site": "cp ./src/site/* ./docs && cp ./src/site/.nojekyll ./docs",
+    "site": "cp ./src/site/* ./docs && cp ./README.md ./docs/index.md",
     "typescript": "tsc --build tsconfig.json",
     "test": "echo todo jest",
-    "build": "npm run clean && npm run typescript && npm run site && npm run test"
+    "build": "npm run clean && npm run typescript && cp ./src/js/shebang.js ./dist && npm run site && npm run test"
   },
   "repository": {
     "type": "git",

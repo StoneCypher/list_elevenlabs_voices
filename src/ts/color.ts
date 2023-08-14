@@ -1,7 +1,7 @@
 
 import { white, whiteBright, blackBright, cyan } from 'cli-color';
 
-let in_color: boolean = false;
+let in_color: boolean = true;
 
 function is_color(set_to: boolean) {
   in_color = set_to;

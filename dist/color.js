@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.misc = exports.name = exports.item = exports.base = exports.is_color = void 0;
 const cli_color_1 = require("cli-color");
-let in_color = false;
+let in_color = true;
 function is_color(set_to) {
     in_color = set_to;
     return in_color;
