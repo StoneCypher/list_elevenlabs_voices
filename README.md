@@ -41,6 +41,8 @@ All formatting options are mutually exclusive:
 
 Other options:
 
+* `-p` / `--private`
+    * Only show private voices; remove all premades from list (including written file)
 * `-k <key>` / `--api-key <key>`
     * Use this API key.  Overrides all other options
 * `-e <kenv>` / `--key-envvar <kenv>`

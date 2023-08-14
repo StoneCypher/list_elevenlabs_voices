@@ -15,9 +15,10 @@ program
   .version(pkg.version);
 
 program
-  .option('-q, --quiet',               'do not consolize voices (not the same as silent)')
+  .option('-p, --private',             'only list your own private voices; skip premades')
   .option('-k, --api-key <key>',       'specify an api key to get private voices')
   .option('-e, --key-envvar <e>',      'specify an envvar name to get an api key from')
+  .option('-q, --quiet',               'do not consolize voices (not the same as silent)')
   .option('-s, --silent',              'no output at all (todo)')
   .option('-c, --color',               'colorize output (default; not for json)')
   .option('-b, --basic',               'basic output (no color, not json)')
@@ -124,7 +125,7 @@ function emit_basic_output(voices: any) {
 }
 
 function emit_color_output(voices: any) {
-  voices.voices.map( (v: any) => {
+  voices.map( (v: any) => {
     const name_col = 30;
     const name_sub = (v.name.length < name_col? v.name : (v.name.substring(0, name_col-3) + '...')).padEnd(name_col);
     console.log(base( `${misc(v.category.padStart(10))} ${item(v.voice_id)} ${name(name_sub)} ` ));
@@ -145,7 +146,11 @@ function emit_formatted_json_output(voices: any) {
 
 async function handle_cli() {
 
-  const voices = await attempt_backend_call();
+  const o_voices = await attempt_backend_call();
+
+  const voices = options.private
+    ? o_voices.voices.filter( (v: any) => v.category !== 'premade')
+    : o_voices.voices;
 
   if (options.outputJson && (typeof options.outputJson === 'string')) {
 

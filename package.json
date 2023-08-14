@@ -1,6 +1,6 @@
 {
   "name": "list_elevenlabs_voices",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "description": "List eleven labs voices in the console.  Output as text or json.",
   "bin": "dist/shebang.js",
   "main": "dist/index.js",
